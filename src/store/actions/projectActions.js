@@ -4,7 +4,7 @@ export const createProject = (project) => {
     return (dispatch, getState) => {
       const profile = getState().auth;
         //make an async call to firebase
-        axios.post('http://localhost:3001/blog', {...project, ...profile}).then(() => {
+        axios.post('https://blogapp-api-jbqb.onrender.com/blog', {...project, ...profile}).then(() => {
                 dispatch({ type: 'CREATE_PROJECT', project });
             }).catch((err) => {
                 dispatch({ type: 'CREATE_PROJECT_ERROR', err });
@@ -14,7 +14,7 @@ export const createProject = (project) => {
 
 export const getProjects = () => {
   return (dispatch) => {
-    return axios.get('http://localhost:3001/blogs')
+    return axios.get('https://blogapp-api-jbqb.onrender.com/blogs')
       .then(response => {
         dispatch({
           type: 'GET_PROJECTS_SUCCESS',
@@ -33,7 +33,7 @@ export const getProjects = () => {
 
 export const getProject = (id, token) => {
   return (dispatch) => {
-    return axios.get('http://localhost:3001/blog/', {
+    return axios.get('https://blogapp-api-jbqb.onrender.com/blog/', {
       params: {
         id: id,
         token: token

@@ -22,7 +22,7 @@ function ProjectDetails(props) {
     }, [props, id])
 
     const deleteProject = () => {
-        axios.delete('http://localhost:3001/blog', {data: {id: id, token: props.auth.token}})
+        axios.delete('https://blogapp-api-jbqb.onrender.com/blog', {data: {id: id, token: props.auth.token}})
             .then(() => setDel(true))
             .catch(error => setErr(error.response.data));
     }

@@ -2,7 +2,7 @@ import axios from "axios"
 
 export const logIn = (credentials) => {
     return (dispatch) => {
-        axios.post("http://localhost:3001/login", credentials).then(response => {
+        axios.post("https://blogapp-api-jbqb.onrender.com/login", credentials).then(response => {
             const result = response.data;
             dispatch({type: 'LOGIN_SUCCESS', result});
         }).catch((err) => {
@@ -13,7 +13,7 @@ export const logIn = (credentials) => {
 
 export const signUp = (credentials) => {
     return (dispatch) => {
-        axios.post("http://localhost:3001/signup", credentials).then(response => {
+        axios.post("https://blogapp-api-jbqb.onrender.com/signup", credentials).then(response => {
             const result = response.data;
             if(typeof result === "string")
                 dispatch({type: result})
@@ -34,7 +34,7 @@ export const signOut = () => {
 
 export const logInToken = (credentials) => {
     return (dispatch) => {
-        axios.post("http://localhost:3001/loginToken", credentials).then(response => {
+        axios.post("https://blogapp-api-jbqb.onrender.com/loginToken", credentials).then(response => {
             const result = response.data;
             dispatch({type: 'LOGIN_SUCCESS', result});
         }).catch((err) => {

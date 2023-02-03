@@ -10,7 +10,7 @@ function Navbar(props) {
     return (
         <nav className="nav-wrapper teal lighten-2">
             <div className="container">
-                <Link to='/' className="brand-logo yellow-text text-lighten-4" style={{fontFamily: 'Kalam', fontSize: '36px'}}>Open Recipes</Link>
+                <Link to='/' className="yellow-text text-lighten-4" style={{fontFamily: 'Kalam', fontSize: '36px'}}>Open Recipes</Link>
                 { links }
             </div>
         </nav>

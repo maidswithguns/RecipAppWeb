@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 import Dashboard from './components/dashboard/Dashboard';
@@ -20,7 +20,7 @@ function App(props) {
   }, [])
 
     return (
-      <BrowserRouter>
+      <HashRouter>
       <div className='App'>
         <Navbar />
         <Routes>
@@ -32,7 +32,7 @@ function App(props) {
           <Route path='*' element={<Dashboard />} />
         </Routes>
       </div>
-      </BrowserRouter>
+      </HashRouter>
   );
 }
 

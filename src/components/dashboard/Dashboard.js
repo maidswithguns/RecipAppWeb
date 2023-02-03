@@ -5,7 +5,7 @@ import { getProjects } from "../../store/actions/projectActions";
 import { useEffect, useState } from "react";
 
 function Dashboard(props) {
-    const [projects, setProjects] = useState([]);
+    const [projects, setProjects] = useState();
     const [sortedProjects, setSortedProjects] = useState([]);
   
     useEffect(() => {
@@ -17,6 +17,17 @@ function Dashboard(props) {
   
     return (
       <div className="dashboard container">
+        {projects == null ? <div className="preloader-wrapper big active" style={{position: 'absolute', left: '50%', top: '50%'}}>
+                    <div className="spinner-layer spinner-blue-only">
+                    <div className="circle-clipper left">
+                        <div className="circle"></div>
+                    </div><div className="gap-patch">
+                        <div className="circle"></div>
+                    </div><div className="circle-clipper right">
+                        <div className="circle"></div>
+                    </div>
+                    </div>
+                </div> : null}
         <div className="row">
           <div className="col m8 s12">
             <ProjectList projects={projects} />

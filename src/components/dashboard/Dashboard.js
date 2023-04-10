@@ -32,7 +32,7 @@ function Dashboard(props) {
           <div className="col m8 s12">
             <ProjectList projects={projects} />
           </div>
-          <div className="col m3 offset-m1">
+          <div className="col m3 offset-m1 s12">
             <MostViewed projects={sortedProjects} />
           </div>
         </div>

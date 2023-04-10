@@ -17,6 +17,7 @@
     "buffer": "^6.0.3",
     "firebase": "^9.14.0",
     "font-awesome": "^4.7.0",
+    "materialize-css": "^1.0.0",
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

@@ -17,7 +17,7 @@ function Dashboard(props) {
   
     return (
       <div className="dashboard container">
-        {projects == null ? <div className="preloader-wrapper big active" style={{position: 'absolute', left: '50%', top: '50%'}}>
+        {projects == null ? <div><div className="preloader-wrapper big active" style={{position: 'absolute', left: '50%', top: '50%'}}>
                     <div className="spinner-layer spinner-blue-only">
                     <div className="circle-clipper left">
                         <div className="circle"></div>
@@ -27,7 +27,10 @@ function Dashboard(props) {
                         <div className="circle"></div>
                     </div>
                     </div>
-                </div> : null}
+                </div>
+                <span>Please wait while servers are booting up. It may take a while</span>
+                </div>
+                 : null}
         <div className="row">
           <div className="col m8 s12">
             <ProjectList projects={projects} />

@@ -48,7 +48,7 @@ const ProjectSummary = ({project}) => {
                     <p>Posted by {project.authorUsername}</p>
                     <p className="grey-text">{moment(date).calendar()}</p>
                 </header>
-                <div className="col m2 s12 teal lighten-3 white-text summaryIconList">
+                <div className="col m2 s12 teal lighten-2 white-text summaryIconList">
                     <ul>
                         <li style={listStyle}><VisibilityIcon />{project.views} views</li>
                         <li style={listStyle}><AccessAlarmsIcon />{project.time} minutes</li>

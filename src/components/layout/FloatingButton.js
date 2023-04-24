@@ -11,7 +11,7 @@ function FloatingButton(props) {
             direction: 'up',
             hoverEnabled: false
           });
-      }, []);
+      }, [props.auth]);
 
     function logoutButtons() {
         return (
@@ -30,16 +30,16 @@ function FloatingButton(props) {
         )
     }
 
-    function loginButtons() {
+    function loginButtons(props) {
         return (
             <div>
                 <li>
-                    <NavLink className="btn-floating aqua">
+                    <a className="btn-floating aqua" onClick={props.signOut}>
                         <i className="material-icons">logout</i>
-                    </NavLink>
+                    </a>
                 </li>
                 <li>
-                    <NavLink className="btn-floating aqua">
+                    <NavLink className="btn-floating aqua" to="/create">
                         <i className="material-icons">add</i>
                     </NavLink>
                 </li>
@@ -53,7 +53,7 @@ function FloatingButton(props) {
                 <i className="large material-icons" style={{color: '#4db6ac'}}>menu</i>
             </a>
             <ul>
-                {props.auth.username ? loginButtons() : logoutButtons()}
+                {props.auth.username ? loginButtons(props) : logoutButtons()}
             </ul>
         </div>
     )
